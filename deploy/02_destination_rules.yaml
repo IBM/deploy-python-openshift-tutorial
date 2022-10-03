@@ -3,5 +3,5 @@ kind: DestinationRule
 metadata:
   name: hello
 spec:
-  host: <service_name>
+  host: test-telemetria
   subsets: []

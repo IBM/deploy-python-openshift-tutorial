@@ -28,6 +28,6 @@ spec:
         exact: /hello
     route:
     - destination:
-        host: <service_name>
+        host: test-telemetria
         port:
           number: 5000
