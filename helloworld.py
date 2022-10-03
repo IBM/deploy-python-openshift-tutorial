@@ -34,7 +34,7 @@ def main():
     trace.get_tracer_provider().add_span_processor(
        BatchSpanProcessor(jaeger_exporter)
     )
-
+     
     tracer = trace.get_tracer(__name__)
     with tracer.start_as_current_span("rootSpan"):
         with tracer.start_as_current_span("childSpan"):
