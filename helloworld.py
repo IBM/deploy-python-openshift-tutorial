@@ -17,8 +17,7 @@ def metrics():
     res = res + "#HELP c_byes count of calls to /bye\n#TYPE c_byes counter\n"
     res = res + "c_byes " + str(c_byes._value.get())
 
-    # return Response(res, mimetype="text/plain")
-    return c_hellos
+    return Response(res, mimetype="text/plain")
 
 @app.route("/hello") 
 def hello():
