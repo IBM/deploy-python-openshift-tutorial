@@ -8,13 +8,13 @@ c_byes = Counter('count_byes', 'number of byes')
 
 @app.route('/')   # URL '/' to be handled by main() route handler
 def main():
-    return Response('Hello, world 2!', mimetype="text/xml")
+    return Response('Hello, world 2!', mimetype="text/plain")
 
 @app.route("/metrics") # URL for metrics
 def metrics():
     res = "c_hellos " + str(c_hellos._value.get()) + '\n'
     res = res + "c_byes " + str(c_byes._value.get())
-    return Response(res, mimetype="text/xml")
+    return Response(res, mimetype="text/plain")
 
 @app.route("/hello") 
 def hello():
