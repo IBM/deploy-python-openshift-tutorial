@@ -14,10 +14,11 @@ def main():
 def metrics():
     res = "#HELP c_hellos count of calls to /hello\n#TYPE c_hellos counter\n"
     res = res + "c_hellos " + str(c_hellos._value.get()) + '\n'
-    res = "#HELP c_byes count of calls to /bye\n#TYPE c_byes counter\n"
+    res = res + "#HELP c_byes count of calls to /bye\n#TYPE c_byes counter\n"
     res = res + "c_byes " + str(c_byes._value.get())
 
-    return Response(res, mimetype="text/plain")
+    # return Response(res, mimetype="text/plain")
+    return c_hellos
 
 @app.route("/hello") 
 def hello():
