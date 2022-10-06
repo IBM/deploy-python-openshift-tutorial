@@ -12,7 +12,7 @@ def main():
 
 @app.route("/metrics") # URL for metrics
 def metrics():
-    res = "#INFO"
+    res = "#INFO\n"
     res = res + "c_hellos " + str(c_hellos._value.get()) + '\n'
     res = res + "c_byes " + str(c_byes._value.get())
     return Response(res, mimetype="text/plain")
