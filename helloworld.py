@@ -12,9 +12,11 @@ def main():
 
 @app.route("/metrics") # URL for metrics
 def metrics():
-    res = "#INFO\n"
+    res = "#HELP c_hellos count of calls to /hello\n#TYPE c_hellos counter"
     res = res + "c_hellos " + str(c_hellos._value.get()) + '\n'
+    res = "#HELP c_byes count of calls to /bye\n#TYPE c_byes counter"
     res = res + "c_byes " + str(c_byes._value.get())
+    
     return Response(res, mimetype="text/plain")
 
 @app.route("/hello") 
