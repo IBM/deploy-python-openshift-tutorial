@@ -1,1 +1,2 @@
 Flask==2.2.2
+prometheus-client==0.14.1
